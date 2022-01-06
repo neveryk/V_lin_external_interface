@@ -2,4 +2,5 @@
 .pytest_cache
 report
 allure-reports
+allure-report
 __pycache__
