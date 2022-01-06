@@ -1,0 +1,131 @@
+{
+  "uid" : "2328afa04837f6d7",
+  "name" : "test_addbank_code[QA3213165461321132-bd87ac5d-8e97-42e2-85ac-c296c431548d-建行-6233560021355623-440981197909234214]",
+  "fullName" : "testcases.test_vlin.TestVlin#test_addbank_code",
+  "historyId" : "72a443a374d38f0c4e29a679a0eba7c7",
+  "time" : {
+    "start" : 1641440494290,
+    "stop" : 1641440494581,
+    "duration" : 291
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1641440494217,
+      "stop" : 1641440494289,
+      "duration" : 72
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "新增银行卡",
+      "time" : {
+        "start" : 1641440494290,
+        "stop" : 1641440494581,
+        "duration" : 291
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "22e0cf8ffa3f6f00",
+        "name" : "response-data",
+        "source" : "22e0cf8ffa3f6f00.txt",
+        "type" : "text/plain",
+        "size" : 96
+      } ],
+      "parameters" : [ {
+        "name" : "payTaxesCode",
+        "value" : "'QA3213165461321132'"
+      }, {
+        "name" : "keyStr",
+        "value" : "'bd87ac5d-8e97-42e2-85ac-c296c431548d'"
+      }, {
+        "name" : "bankName",
+        "value" : "'建行'"
+      }, {
+        "name" : "bankCode",
+        "value" : "'6233560021355623'"
+      }, {
+        "name" : "idCrad",
+        "value" : "'440981197909234214'"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testcases"
+  }, {
+    "name" : "suite",
+    "value" : "test_vlin"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestVlin"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-QJ5T1HA"
+  }, {
+    "name" : "thread",
+    "value" : "6696-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcases.test_vlin"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "bankCode",
+    "value" : "'6233560021355623'"
+  }, {
+    "name" : "bankName",
+    "value" : "'建行'"
+  }, {
+    "name" : "idCrad",
+    "value" : "'440981197909234214'"
+  }, {
+    "name" : "keyStr",
+    "value" : "'bd87ac5d-8e97-42e2-85ac-c296c431548d'"
+  }, {
+    "name" : "payTaxesCode",
+    "value" : "'QA3213165461321132'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "2328afa04837f6d7.json",
+  "parameterValues" : [ "'6233560021355623'", "'建行'", "'440981197909234214'", "'bd87ac5d-8e97-42e2-85ac-c296c431548d'", "'QA3213165461321132'" ]
+}
