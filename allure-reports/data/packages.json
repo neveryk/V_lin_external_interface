@@ -5,7 +5,7 @@
     "name" : "testcases.test_vlin",
     "children" : [ {
       "name" : "test_addbank_code[QA3213165461321132-bd87ac5d-8e97-42e2-85ac-c296c431548d-建行-6233560021355623-440981197909234214]",
-      "uid" : "2328afa04837f6d7",
+      "uid" : "c9825433078fe069",
       "parentUid" : "c6d57233c3b924f63cc595e045beec83",
       "status" : "passed",
       "time" : {

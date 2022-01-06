@@ -1,11 +1,7 @@
 import json
-from ast import literal_eval
 import logging
-
 import requests
-
 from core.client import Client
-from public import config
 
 import allure
 
