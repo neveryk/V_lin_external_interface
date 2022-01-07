@@ -2,7 +2,7 @@ from api.tenapi import Tenapi
 import os
 from common.read_data import data_yaml
 from api.tenapi import Tenapi
-
+from api.genapi import Genapi
 
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 data_file_path = os.path.join(BASE_PATH, 'config', 'setting.ini')
@@ -13,7 +13,9 @@ def get_data(yaml_file_name):
     return yaml_data
 
 base_data = get_data('login_data.yml')
+outside_data = get_data('outside_data.yml')
 
 HOST=data_yaml.load_ini(data_file_path)["host"]["BASEURL"]
 
 ten=Tenapi(HOST)
+gen=Genapi(HOST)

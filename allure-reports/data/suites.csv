@@ -1,2 +1,5 @@
 "Status","Name","Duration in ms","Description"
-"passed","testcases.test_vlin.TestVlin#test_addbank_code","291",""
+"failed","testcases.test_vlin.TestVlin#test_insert_people","91",""
+"passed","testcases.test_vlin.TestVlin#test_addbank_code","344",""
+"failed","testcases.test_vlin.TestVlin#test_updatebank_code","132",""
+"failed","testcases.test_vlin.TestVlin#test_add_order","436",""

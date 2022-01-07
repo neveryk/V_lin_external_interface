@@ -1,5 +1,49 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert 0 == 1\n  +0\n  -1",
+      "children" : [ {
+        "name" : "test_updatebank_code[QA3213165461321132-QA3213165461321132-建行-6233560021355623-长沙银行-6233021655895415-440981197909234214]",
+        "uid" : "aac7bd46633b57fd",
+        "parentUid" : "c34a9c14936f5a3031b3b6c742398ec0",
+        "status" : "failed",
+        "time" : {
+          "start" : 1641533541151,
+          "stop" : 1641533541283,
+          "duration" : 132
+        },
+        "flaky" : false,
+        "parameters" : [ "'6233560021355623'", "'建行'", "'6233021655895415'", "'长沙银行'", "'440981197909234214'", "'QA3213165461321132'", "'QA3213165461321132'" ]
+      }, {
+        "name" : "test_insert_people[QA3213165461321132-QA3213165461321132-小洗-513436195609267957-13655200210-建行-6233568895665220-1200215@qq.com]",
+        "uid" : "12cd77e43a5323e7",
+        "parentUid" : "c34a9c14936f5a3031b3b6c742398ec0",
+        "status" : "failed",
+        "time" : {
+          "start" : 1641533541430,
+          "stop" : 1641533541521,
+          "duration" : 91
+        },
+        "flaky" : false,
+        "parameters" : [ "'6233568895665220'", "'建行'", "'1200215@qq.com'", "'513436195609267957'", "'QA3213165461321132'", "'QA3213165461321132'", "'小洗'", "'13655200210'" ]
+      }, {
+        "name" : "test_add_order[data0]",
+        "uid" : "797317a17a968daf",
+        "parentUid" : "c34a9c14936f5a3031b3b6c742398ec0",
+        "status" : "failed",
+        "time" : {
+          "start" : 1641533541534,
+          "stop" : 1641533541970,
+          "duration" : 436
+        },
+        "flaky" : false,
+        "parameters" : [ "{'orderName': '订单名称', 'payTaxesCode': 'QA3213165461321132', 'keyStr': 'QA3213165461321132', 'organizingCode': 'QA3213165461321132', 'peopleNumber': 1, 'orderPrice': '100/天', 'content': '内容', 'SendOrderList': [{'peopleName': '小洗', 'iDCard': '513436195609267957', 'bankCode': '6233568895665220', 'bankName': '建行', 'serviceCharge': 100001}]}" ]
+      } ],
+      "uid" : "c34a9c14936f5a3031b3b6c742398ec0"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
 }

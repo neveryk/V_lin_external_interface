@@ -15,14 +15,33 @@ class Client:
     def get(self, url, params=None, **kwargs):
         urllib3.disable_warnings()
         res = self.session.get(self.host + url, params=params, verify=False,**kwargs)
-        # allure.attach(json.dumps(dict(self.session.headers.items())), 'request-headers', allure.attachment_type.TEXT)
+        allure.attach(self.host+url, 'request-url', allure.attachment_type.TEXT)
         allure.attach(res.text, 'response-data', allure.attachment_type.TEXT)
         return res
 
     def post(self, url, jsondata=None,**kwargs):
         urllib3.disable_warnings()
-        res = self.session.post(self.host + url,data=jsondata,verify=False,headers=self.header,**kwargs)
-        # allure.attach(json.dumps(dict(self.session.headers.items())), 'request-headers', allure.attachment_type.TEXT)
+        str_data=json.dumps(jsondata,ensure_ascii=False)
+        data=str_data.encode()
+
+        res = self.session.post(self.host + url,data=data,verify=False,headers=self.header,**kwargs)
+        allure.attach(self.host+url, 'request-url', allure.attachment_type.TEXT)
+        allure.attach(str(jsondata), 'request-data', allure.attachment_type.TEXT)
         allure.attach(res.text, 'response-data', allure.attachment_type.TEXT)
         return res
+
+    def post_key(self, url, jsondata=None, **kwargs):
+        urllib3.disable_warnings()
+        res = self.session.post(self.host + url, json=jsondata, verify=False, **kwargs)
+        allure.attach(self.host + url, 'request-url', allure.attachment_type.TEXT)
+        allure.attach(res.text, 'response-data', allure.attachment_type.TEXT)
+        return res
+
+    def post_file(self, url, file,jsondata=None, **kwargs):
+        urllib3.disable_warnings()
+        res = self.session.post(self.host + url, data=jsondata, files=file, verify=False, **kwargs)
+        allure.attach(self.host + url, 'request-url', allure.attachment_type.TEXT)
+        allure.attach(res.text, 'response-data', allure.attachment_type.TEXT)
+        return res
+
 

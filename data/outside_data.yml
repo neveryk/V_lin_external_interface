@@ -1,0 +1,94 @@
+test_getkey:
+  - ["kkpt","kkpt","0"]
+test_add_order_v1:
+#apikey,orderNo,orderName,customerCode,address,svctmBegin,svctmEnd,unitPrice,quantity,peopleName,iDCard,bankCode,amt,exAmt
+  - ["38820221eww3qw","38862021eww3qw","QA3213165461321132","地址","杨斐然","440981197909234214","6212263602014879530",49999,0.0]
+test_add_order_v2:
+  - orderNo: "qqwww1233zxc32ety22q"
+    customerCode: "91430181550745699R"
+    totalamt: 20
+    peoples:
+      - peopleName: "杨志成"
+        iDCard: "431121199707071419"
+        bankCode: "6228481099306911471"
+        amt: 20
+        exAmt: 0.0
+      - peopleName: "刘顶峰"
+        iDCard: "430923199412091418"
+        bankCode: "6214467873121453622"
+        amt: 20
+        exAmt: 0.0
+      - peopleName: "杨军"
+        iDCard: "433123199212253936"
+        bankCode: "6217995510033733642"
+        amt: 20
+        exAmt: 0.0
+  - orderNo: "qqwww1233zxc32ety22q"
+    customerCode: "91430181550745699R"
+    totalamt: 30
+    peoples:
+      - peopleName: "杨志成"
+        iDCard: "431121199707071419"
+        bankCode: "6228481099306911471"
+        amt: 30
+        exAmt: 0.0
+      - peopleName: "刘顶峰"
+        iDCard: "430923199412091418"
+        bankCode: "6214467873121453622"
+        amt: 30
+        exAmt: 0.0
+      - peopleName: "杨军"
+        iDCard: "433123199212253936"
+        bankCode: "6217995510033733642"
+        amt: 30
+        exAmt: 0.0
+
+test_add_order_v1_many:
+  - orderNo: "q339e1"
+    orderName: "q339e1"
+    customerCode: "QA3213165461321132"
+    address: "测试地址"
+    svctmBegin: "2022-1-05 15:15:15"
+    svctmEnd: "2022-01-05 14:14:14"
+    unitPrice: ""
+    quantity: ""
+    peoples:
+      - peopleName: "杨志成"
+        iDCard: "431121199707071419"
+        bankCode: "6228481099306911471"
+        amt: 30
+        exAmt: 0.0
+      - peopleName: "刘清明"
+        iDCard: "430223197303037634"
+        bankCode: "6215697500009420360"
+        amt: 30
+        exAmt: 0.0
+      - peopleName: "卢克信"
+        iDCard: "130230195807060030"
+        bankCode: "6230520650034956870"
+        amt: 30
+        exAmt: 0.0
+  - orderNo: "q339e2"
+    orderName: "q339e2"
+    customerCode: "QA3213165461321132"
+    address: "测试地址"
+    svctmBegin: "2022-1-05 15:15:15"
+    svctmEnd: "2022-01-05 14:14:14"
+    unitPrice: ""
+    quantity: ""
+    peoples:
+      - peopleName: "杨志成"
+        iDCard: "431121199707071419"
+        bankCode: "6228481099306911471"
+        amt: 10
+        exAmt: 0.0
+      - peopleName: "刘清明"
+        iDCard: "430223197303037634"
+        bankCode: "6215697500009420360"
+        amt: 10
+        exAmt: 0.0
+      - peopleName: "卢克信"
+        iDCard: "130230195807060030"
+        bankCode: "6230520650034956870"
+        amt: 10
+        exAmt: 0.0

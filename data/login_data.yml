@@ -1,3 +1,23 @@
-test_addbank_code:    #payTaxesCode,keyStr,bankName,bankCode,idCrad
- - ['QA3213165461321132','bd87ac5d-8e97-42e2-85ac-c296c431548d','建行','6233560021355623','440981197909234214']
-
+test_addbank_code:
+#payTaxesCode,keyStr,bankName,bankCode,idCrad
+ - ['QA3213165461321132','QA3213165461321132','建行','6233560021355623','440981197909234214']
+test_updatebank_code:
+#payTaxesCode,keyStr,OldbankName,OldbankCode,bankName,bankCode,idCrad
+ - ['QA3213165461321132','QA3213165461321132',"建行","6233560021355623","长沙银行","6233021655895415","440981197909234214"]
+test_insert_people:
+#payTaxesCode,keyStr,peopleName,iDCard,phone,bankName,bankCode,email
+ - ['QA3213165461321132','QA3213165461321132',"小洗","513436195609267957","13655200210","建行","6233568895665220","1200215@qq.com"]
+test_add_order:
+  - orderName: "订单名称"
+    payTaxesCode: "QA3213165461321132"
+    keyStr: "QA3213165461321132"
+    organizingCode: "QA3213165461321132"
+    peopleNumber: 1
+    orderPrice: "100/天"
+    content: "内容"
+    SendOrderList:
+      - peopleName: "小洗"
+        iDCard: "513436195609267957"
+        bankCode: "6233568895665220"
+        bankName: "建行"
+        serviceCharge: 100001

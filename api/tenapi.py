@@ -19,13 +19,33 @@ class Tenapi(Client):
         }
         return self.post('/api/External/Ext_AddBankCard',jsondata=data)
 
-    def update_bankcode(self,data):
+    def update_bankcode(self,payTaxesCode,keyStr,OldbankName,OldbankCode,bankName,bankCode,idCrad):
+        data={
+            "payTaxesCode":payTaxesCode,
+            "keyStr":keyStr,
+            "OldbankName":OldbankName,
+            "OldbankCode":OldbankCode,
+            "bankName":bankName,
+            "bankCode":bankCode,
+            "idCrad":idCrad
+        }
         return self.post('/api/External/Ext_EditBankCard',jsondata=data)
 
-    def insert_people(self,data):
+    def insert_people(self,payTaxesCode,keyStr,peopleName,iDCard,phone,bankName,bankCode,email):
+        data={
+            "payTaxesCode":payTaxesCode,
+            "keyStr":keyStr,
+            "peopleName":peopleName,
+            "iDCard":iDCard,
+            "phone":phone,
+            "bankName":bankName,
+            "bankCode":bankCode,
+            "email":email
+        }
         return self.post('/api/External/Ext_AddPeople',jsondata=data)
 
     def add_order(self,data):
+
         return self.post('/api/External/Ext_AddOrder',jsondata=data)
 
 
