@@ -93,3 +93,7 @@ test_add_order_v1_many:
         bankCode: "6230520650034956870"
         amt: 10
         exAmt: 0.0
+
+test_add_people:
+#customerCode,peopleName,iDCard,phone,paymentAccountType,bankCode,bankName,createDate,signDate,signFile,protocolState
+  - ["QA3213165461321132","黄翔","632323190605261685","13566233201"," ","6255895562001256","长沙银行"," "," "," ",0]

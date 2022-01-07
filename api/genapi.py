@@ -47,3 +47,19 @@ class Genapi(Client):
     def many_add_order_v2(self,data):
         return self.post('/api/External/AddOrderV2',data)
 
+    def add_people(self,apikey,customerCode,peopleName,iDCard,phone,paymentAccountType,bankCode,bankName,createDate,signDate,signFile,protocolState):
+        data={
+            "apikey":apikey,
+            "customerCode":customerCode,
+            "peopleName":peopleName,
+            "iDCard":iDCard,
+            "phone":phone,
+            "paymentAccountType":paymentAccountType,
+            "bankCode":bankCode,
+            "bankName":bankName,
+            "createDate":createDate,
+            "signDate":signDate,
+            "signFile":signFile,
+            "protocolState":protocolState
+        }
+        return self.post('/api/External/AddPeople',data)
