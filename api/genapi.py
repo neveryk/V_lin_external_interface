@@ -63,3 +63,39 @@ class Genapi(Client):
             "protocolState":protocolState
         }
         return self.post('/api/External/AddPeople',data)
+
+    def update_people_message(self,apikey,customerCode,peopleName,iDCard,signDate,signFile):
+        data={
+            "apikey":apikey,
+            "customerCode":customerCode,
+            "peopleName":peopleName,
+            "iDCard":iDCard,
+            "signDate":signDate,
+            "signFile":signFile
+        }
+        return self.post("/api/External/Protocol",data)
+
+    def update_bank_code(self,apikey,peopleName,iDCard,paymentAccountType,bankCode,bankName):
+        data={
+            "apikey":apikey,
+            "peopleName":peopleName,
+            "iDCard":iDCard,
+            "paymentAccountType":paymentAccountType,
+            "bankCode":bankCode,
+            "bankName":bankName
+        }
+        return self.post("/api/External/UpBankCard",data)
+
+    def get_order_state(self,apikey,orderNo):
+        data={
+            "apikey":apikey,
+            "orderNo":orderNo
+        }
+        return self.post("/api/External/GetGenerateByOrderNo",data)
+
+    def get_people_state(self,apikey,generateCode):
+        data={
+            "apikey":apikey,
+            "generateCode":generateCode
+        }
+        return  self.post("/api/External/GetPeoplesByGenerateCode",data)

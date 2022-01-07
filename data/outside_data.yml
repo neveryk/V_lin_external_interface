@@ -1,10 +1,10 @@
 test_getkey:
   - ["kkpt","kkpt","0"]
+
 test_add_order_v1:
-#apikey,orderNo,orderName,customerCode,address,svctmBegin,svctmEnd,unitPrice,quantity,peopleName,iDCard,bankCode,amt,exAmt
-  - ["38820221eww3qw","38862021eww3qw","QA3213165461321132","地址","杨斐然","440981197909234214","6212263602014879530",49999,0.0]
-  - ["38820221eww3qw","38862021eww3qw","QA3213165461321132","地址","杨斐然","440981197909234214","6212263602014879530",49,0.0]
-  - ["38820221eww3qw","38862021eww3qw","QA3213165461321132","地址","杨斐然","440981197909234214","6212263602014879530",5,0.0]
+#orderNo,orderName,customerCode,address,svctmBegin,svctmEnd,unitPrice,quantity,peopleName,iDCard,bankCode,amt,exAmt
+  - ["NO-0001","38862021eww3qw","QA3213165461321132","地址","黄翔","632323190605261685","6255895562001256",100,0.0]
+
 test_add_order_v2:
   - orderNo: "qqwww1233zxc32ety22q"
     customerCode: "91430181550745699R"
@@ -97,4 +97,21 @@ test_add_order_v1_many:
 
 test_add_people:
 #customerCode,peopleName,iDCard,phone,paymentAccountType,bankCode,bankName,createDate,signDate,signFile,protocolState
-  - ["QA3213165461321132","黄翔","632323190605261685","13566233201"," ","6255895562001256","长沙银行"," "," "," ",0]
+  - ["QA3213165461321132","黄翔","632323190605261685","13566233201","","6255895562001256","长沙银行","","","",0]
+
+update_people_message:
+#customerCode,peopleName,iDCard,signDate,signFile
+  - ["QA3213165461321132","黄翔","632323190605261685","2022-1-7",""]
+
+update_bank_code:
+#peopleName,iDCard,paymentAccountType,bankCode,bankName
+  - ["黄翔","632323190605261685","","6255895562001256",""]
+
+get_order_state:
+#orderNo
+  - "NO-0001"
+  - "q339e2"
+
+get_people_state:
+#generateCode
+  - "G2201070004"
