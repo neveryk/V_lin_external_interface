@@ -15,10 +15,10 @@ class TestOutside():
         assert json_data["message"]=="success"
         return res
     #
-    # @allure.step('上传附件')
-    # def test_upload(self):
-    #     res=gen.upload_file(apikey)
-    #     return res
+    @allure.step('上传附件')
+    def test_upload(self):
+        res=gen.upload_file(apikey)
+        return res
     #
     # @allure.step('任务同步接口V1')
     # @pytest.mark.parametrize("orderNo,orderName,customerCode,address,peopleName,iDCard,bankCode,amt,exAmt",outside_data["test_add_order_v1"])
@@ -64,11 +64,11 @@ class TestOutside():
     #     assert json_data["message"] == "success"
     #     return res
 
-    @allure.step('获取账单状态')
-    @pytest.mark.parametrize("orderNo", outside_data["get_order_state"])
-    def test_get_order_state(self,orderNo):
-        res = gen.get_order_state(apikey,orderNo)
-        return res
+    # @allure.step('获取账单状态')
+    # @pytest.mark.parametrize("orderNo", outside_data["get_order_state"])
+    # def test_get_order_state(self,orderNo):
+    #     res = gen.get_order_state(apikey,orderNo)
+    #     return res
 
     # @allure.step('获取人员发放状态')
     # @pytest.mark.parametrize("generateCode", outside_data["get_people_state"])

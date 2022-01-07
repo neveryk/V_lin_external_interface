@@ -2,9 +2,8 @@ import json
 import logging
 import requests
 from core.client import Client
-
 import allure
-
+import os
 class Genapi(Client):
     def __init__(self, host, **kwargs):
         super(Genapi, self).__init__(host, **kwargs)
@@ -19,7 +18,7 @@ class Genapi(Client):
 
     def upload_file(self,apikey):
         files = [
-            ('files', ('files', open("C:\\Users\\Administrator\\Desktop\\数据\\员工管理导入模板.xlsx", 'rb'), 'application/vnd.ms-excel'))
+            ('files', ('files', open(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"\data\员工管理导入模板.xlsx", 'rb'), 'application/vnd.ms-excel'))
         ]
         data={
             "apikey":apikey
