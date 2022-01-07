@@ -3,6 +3,7 @@ test_getkey:
 test_add_order_v1:
 #apikey,orderNo,orderName,customerCode,address,svctmBegin,svctmEnd,unitPrice,quantity,peopleName,iDCard,bankCode,amt,exAmt
   - ["38820221eww3qw","38862021eww3qw","QA3213165461321132","地址","杨斐然","440981197909234214","6212263602014879530",49999,0.0]
+  - ["38820221eww3qw","38862021eww3qw","QA3213165461321132","地址","杨斐然","440981197909234214","6212263602014879530",49,0.0]
 test_add_order_v2:
   - orderNo: "qqwww1233zxc32ety22q"
     customerCode: "91430181550745699R"
