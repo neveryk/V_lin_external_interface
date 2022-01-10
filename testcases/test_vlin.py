@@ -3,16 +3,16 @@ import pytest
 import allure
 
 class TestVlin():
-    pass
     # 上海麦朵接口用
-    # @allure.step('新增银行卡')
-    # @pytest.mark.parametrize('payTaxesCode,keyStr,bankName,bankCode,idCrad',base_data['test_addbank_code'])
-    # def test_addbank_code(self,payTaxesCode,keyStr,bankName,bankCode,idCrad):
-    #     res=ten.insert_bankcode(payTaxesCode,keyStr,bankName,bankCode,idCrad)
-    #     respons = res.json()
-    #     success = respons["returnStatus"]
-    #     assert success == 1
-    #     return res
+    @allure.step('新增银行卡')
+    @pytest.mark.parametrize('payTaxesCode,keyStr,bankName,bankCode,idCrad',base_data['test_addbank_code'])
+    def test_addbank_code(self,payTaxesCode,keyStr,bankName,bankCode,idCrad):
+        res=ten.insert_bankcode(payTaxesCode,keyStr,bankName,bankCode,idCrad)
+        respons = res.json()
+        success = respons["returnStatus"]
+        message = respons["message"]
+        assert success == 1 and message == "null"
+
     #
     # @allure.step('编辑银行卡')
     # @pytest.mark.parametrize("payTaxesCode,keyStr,OldbankName,OldbankCode,bankName,bankCode,idCrad",base_data["test_updatebank_code"])

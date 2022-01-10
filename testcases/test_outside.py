@@ -3,22 +3,23 @@ import pytest
 import allure
 
 class TestOutside():
+    pass
     # V零工对外接口
     # 每次必须调用apikey访问
-    @allure.step('获取凭证接口')
-    @pytest.mark.parametrize('userkey,secret,apitype',outside_data['test_getkey'])
-    def test_getkey(self,userkey,secret,apitype):
-        res=gen.get_key(userkey,secret,apitype)
-        json_data=res.json()
-        global apikey
-        apikey=json_data["data"]["apikey"]
-        assert json_data["message"]=="success"
-        return res
-    #
-    @allure.step('上传附件')
-    def test_upload(self):
-        res=gen.upload_file(apikey)
-        return res
+    # @allure.step('获取凭证接口')
+    # @pytest.mark.parametrize('userkey,secret,apitype',outside_data['test_getkey'])
+    # def test_getkey(self,userkey,secret,apitype):
+    #     res=gen.get_key(userkey,secret,apitype)
+    #     json_data=res.json()
+    #     global apikey
+    #     apikey=json_data["data"]["apikey"]
+    #     assert json_data["message"]=="success"
+    #     return res
+    # #
+    # @allure.step('上传附件')
+    # def test_upload(self):
+    #     res=gen.upload_file(apikey)
+    #     return res
     #
     # @allure.step('任务同步接口V1')
     # @pytest.mark.parametrize("orderNo,orderName,customerCode,address,peopleName,iDCard,bankCode,amt,exAmt",outside_data["test_add_order_v1"])
