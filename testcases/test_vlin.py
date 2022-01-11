@@ -13,6 +13,7 @@ class TestVlin():
         message = respons["message"]
         assert success == 1 and message == "null"
 
+
     #
     # @allure.step('编辑银行卡')
     # @pytest.mark.parametrize("payTaxesCode,keyStr,OldbankName,OldbankCode,bankName,bankCode,idCrad",base_data["test_updatebank_code"])
