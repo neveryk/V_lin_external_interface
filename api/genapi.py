@@ -98,3 +98,10 @@ class Genapi(Client):
             "generateCode":generateCode
         }
         return  self.post("/api/External/GetPeoplesByGenerateCode",data)
+
+    def get_Client_freeamount(self,apikey,customerCode):
+        data={
+            "apikey":apikey,
+            "customercode":customerCode
+        }
+        return self.post("/api/External/GetClient",data)

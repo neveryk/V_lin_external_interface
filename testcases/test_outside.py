@@ -6,15 +6,15 @@ class TestOutside():
     pass
     # V零工对外接口
     # 每次必须调用apikey访问
-    # @allure.step('获取凭证接口')
-    # @pytest.mark.parametrize('userkey,secret,apitype',outside_data['test_getkey'])
-    # def test_getkey(self,userkey,secret,apitype):
-    #     res=gen.get_key(userkey,secret,apitype)
-    #     json_data=res.json()
-    #     global apikey
-    #     apikey=json_data["data"]["apikey"]
-    #     assert json_data["message"]=="success"
-    #     return res
+    @allure.step('获取凭证接口')
+    @pytest.mark.parametrize('userkey,secret,apitype',outside_data['test_getkey'])
+    def test_getkey(self,userkey,secret,apitype):
+        res=gen.get_key(userkey,secret,apitype)
+        json_data=res.json()
+        global apikey
+        apikey=json_data["data"]["apikey"]
+        assert json_data["message"]=="success"
+        return res
     # #
     # @allure.step('上传附件')
     # def test_upload(self):
@@ -77,5 +77,10 @@ class TestOutside():
     #     res = gen.get_people_state(apikey, generateCode)
     #     return res
 
+    @allure.step('获取企业可用余额')
+    @pytest.mark.parametrize("customerCode",outside_data["get_Client_freeamount"])
+    def test_get_Client_freeamount(self,customerCode):
+        res = gen.get_Client_freeamount(apikey,customerCode)
+        return res
 
 

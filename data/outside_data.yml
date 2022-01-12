@@ -115,3 +115,8 @@ get_order_state:
 get_people_state:
 #generateCode
   - "G2201070004"
+
+
+get_Client_freeamount:
+#customerCode
+  - "QA3213165461321132"
