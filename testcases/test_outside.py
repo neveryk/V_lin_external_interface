@@ -3,25 +3,34 @@ import pytest
 import allure
 
 class TestOutside():
-    # pass
+    pass
     # V零工对外接口
     # 每次必须调用apikey访问
     @allure.story('获取凭证接口')
     @allure.title('执行获取凭证接口用例')
     @allure.step('获取凭证')
-    @pytest.mark.parametrize('userkey,secret,apitype',outside_data['test_getkey'])
-    def test_getkey(self,userkey,secret,apitype):
+    @pytest.mark.parametrize('userkey,secret,apitype,message,returnStatus',outside_data['test_getkey'])
+    def test_getkey(self,userkey,secret,apitype,message,returnStatus):
         res=gen.get_key(userkey,secret,apitype)
         json_data=res.json()
         global apikey
         apikey=json_data["data"]["apikey"]
-        assert json_data["message"]=="success"
+        assert res.status_code==200
+        assert json_data["message"]==message
+        assert json_data["returnStatus"]==returnStatus
         return res
     # #
+    # @allure.story('获取上传文件接口')
     # @allure.title('上传文件接口')
     # @allure.step('上传附件')
     # def test_upload(self):
     #     res=gen.upload_file(apikey)
+    #     json_data = res.json()
+    #     global file_path
+    #     file_path=json_data["data"][0]["path"]
+    #     assert res.status_code == 200
+    #     assert json_data["message"] == "success"
+    #     assert json_data["returnStatus"] == 1
     #     return res
     #
     # @allure.story('任务同步接口V1')
@@ -57,8 +66,10 @@ class TestOutside():
     # def test_add_people(self,customerCode,peopleName,iDCard,phone,paymentAccountType,bankCode,bankName,createDate,signDate,signFile,protocolState):
     #     res = gen.add_people(apikey,customerCode,peopleName,iDCard,phone,paymentAccountType,bankCode,bankName,createDate,signDate,signFile,protocolState)
     #     json_data = res.json()
-    #     assert json_data["message"] == "success"
-    #     return res
+        # assert res.status_code == 200
+        # assert json_data["message"] == message
+        # assert json_data["returnStatus"] == returnStatus
+        # return res
 
     # @allure.story('更改人员签约信息')
     # @allure.title('执行更改人员签约信息用例')
