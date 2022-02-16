@@ -1,4 +1,4 @@
-from testcases.conftest import gen,outside_data
+from testcases.conftest import gen,outside_data,excel_data
 import pytest
 import allure
 
@@ -6,19 +6,19 @@ class TestOutside():
     pass
     # V零工对外接口
     # 每次必须调用apikey访问
-    @allure.story('获取凭证接口')
-    @allure.title('执行获取凭证接口用例')
-    @allure.step('获取凭证')
-    @pytest.mark.parametrize('userkey,secret,apitype,message,returnStatus',outside_data['test_getkey'])
-    def test_getkey(self,userkey,secret,apitype,message,returnStatus):
-        res=gen.get_key(userkey,secret,apitype)
-        json_data=res.json()
-        global apikey
-        apikey=json_data["data"]["apikey"]
-        assert res.status_code==200
-        assert json_data["message"]==message
-        assert json_data["returnStatus"]==returnStatus
-        return res
+    # @allure.story('获取凭证接口')
+    # @allure.title('执行获取凭证接口用例')
+    # @allure.step('获取凭证')
+    # @pytest.mark.parametrize('userkey,secret,apitype,message,returnStatus',outside_data['test_getkey'])
+    # def test_getkey(self,userkey,secret,apitype,message,returnStatus):
+    #     res=gen.get_key(userkey,secret,apitype)
+    #     json_data=res.json()
+    #     global apikey
+    #     apikey=json_data["data"]["apikey"]
+    #     assert res.status_code==200
+    #     assert json_data["message"]==message
+    #     assert json_data["returnStatus"]==returnStatus
+    #     return res
     # #
     # @allure.story('获取上传文件接口')
     # @allure.title('上传文件接口')
@@ -114,5 +114,12 @@ class TestOutside():
     # def test_get_Client_freeamount(self,customerCode):
     #     res = gen.get_Client_freeamount(apikey,customerCode)
     #     return res
+
+    @pytest.mark.parametrize("name,idcard,money,a,b,c,d,e,f",excel_data)
+    def test_excel(self,name,idcard,money,a,b,c,d,e,f):
+        print(name)
+        print(idcard)
+        # print("姓名{}".format(companyname[0]))
+        # print("身份证{}".format(companyname[1]))
 
 
