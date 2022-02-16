@@ -1,6 +1,9 @@
-from testcases.conftest import gen,outside_data,excel_data
+from testcases.conftest import gen,outside_data,excel_path,sheet_name,excel_data
 import pytest
 import allure
+from common.operation_excel import excel
+from common.generate_data import gen
+
 
 class TestOutside():
     pass
@@ -115,11 +118,16 @@ class TestOutside():
     #     res = gen.get_Client_freeamount(apikey,customerCode)
     #     return res
 
-    @pytest.mark.parametrize("name,idcard,money,a,b,c,d,e,f",excel_data)
-    def test_excel(self,name,idcard,money,a,b,c,d,e,f):
-        print(name)
-        print(idcard)
-        # print("姓名{}".format(companyname[0]))
-        # print("身份证{}".format(companyname[1]))
+    @allure.step("生成excel数据")
+    def test_step_1(self):
+        data = gen.addpeople_data(1)
+        excel.write_excel_xls(excel_path, sheet_name, data)
+        print(excel_data)
 
+    # @pytest.mark.parametrize("name,idcard,money,a,b",excel_data)
+    # def test_excel(self,name,idcard,money,a,b):
+    #     print(excel_data)
+        # print(name)
+        # print(idcard)
 
+print(excel_data)

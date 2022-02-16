@@ -20,7 +20,12 @@ def get_excel_data(excel_file_name):
 
 base_data = get_data('login_data.yml')
 outside_data = get_data('outside_data.yml')
-excel_data=get_excel_data('test_data.xls')
+
+excel_path = os.path.join(BASE_PATH, 'data', "data.xls")
+sheet_name="Sheet1"
+excel_data= get_excel_data('data.xls')
+
+
 
 HOST=data_yaml.load_ini(data_file_path)["host"]["BASEURL"]
 
