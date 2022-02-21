@@ -4,6 +4,9 @@ from common.read_data import data_yaml
 from api.tenapi import Tenapi
 from api.genapi import Genapi
 from common.operation_excel import excel
+from common.generate_data import data_test
+
+
 
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 data_file_path = os.path.join(BASE_PATH, 'config', 'setting.ini')
@@ -31,3 +34,8 @@ HOST=data_yaml.load_ini(data_file_path)["host"]["BASEURL"]
 
 ten=Tenapi(HOST)
 gen=Genapi(HOST)
+
+
+# #生成excel数据并写入
+data = data_test.addpeople_data(20)
+excel.write_excel_xls(excel_path, sheet_name, data)

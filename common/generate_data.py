@@ -5,15 +5,22 @@ import time
 f=Faker(locale='zh-CN')
 class Generate_Data():
     def addpeople_data(self,num):
-        cols=["姓名","银行卡号","手机号码","身份证","时间"]
+        cols=["customerCode","姓名","身份证","手机号码","paymentAccountType","银行账号","bankName","createDate","signDate","protocolState","message","returnStatus"]
         datalist=[]
         for i in range(num):
+            customerCode="44562131211500231QA"
             people_name=f.name()
-            bank_code = random.randint(6200000000000000, 6299999999999999)
-            phone_num=f.phone_number()
             sfz = f.ssn()
-            date=time.strftime("%Y-%m-%d %H:%M:%S")
-            data=[people_name,str(bank_code),phone_num,sfz,date]
+            phone_num = f.phone_number()
+            paymentAccountType=1
+            bank_code = int(random.randint(6200000000000000, 6299999999999999))
+            bankName="建行"
+            createDate=time.strftime("%Y-%m-%d %H:%M:%S")
+            signDate=createDate
+            protocolState=0
+            message="success"
+            returnStatus=1
+            data=[customerCode,people_name,str(sfz),phone_num,paymentAccountType,bank_code,bankName,createDate,signDate,protocolState,message,returnStatus]
             datalist.append(data)
         datalist.insert(0,cols)
         return datalist
@@ -26,4 +33,4 @@ class Generate_Data():
         return {"last_day_of_last_month":str(last_day_of_last_month),"first_day_of_last_month":str(first_day_of_last_month),"now":str(now)}
 
 
-gen=Generate_Data()
+data_test=Generate_Data()
