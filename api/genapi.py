@@ -74,14 +74,15 @@ class Genapi(Client):
         }
         return self.post("/api/External/Protocol",data)
 
-    def update_bank_code(self,apikey,peopleName,iDCard,paymentAccountType,bankCode,bankName):
+    def update_bank_code(self,apikey,peopleName,iDCard,paymentAccountType,bankCode,bankName,phone):
         data={
             "apikey":apikey,
             "peopleName":peopleName,
             "iDCard":iDCard,
             "paymentAccountType":paymentAccountType,
             "bankCode":bankCode,
-            "bankName":bankName
+            "bankName":bankName,
+            "phone":phone
         }
         return self.post("/api/External/UpBankCard",data)
 

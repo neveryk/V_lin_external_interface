@@ -155,8 +155,8 @@ update_people_message:
   - ["QA3213165461321132","黄翔","632323190605261685","2022-1-7",""]
 
 update_bank_code:
-#peopleName,iDCard,paymentAccountType,bankCode,bankName
-  - ["黄翔","632323190605261685","","6255895562001256",""]
+#peopleName,iDCard,paymentAccountType,bankCode,bankName,phone,message,returnStatus
+  - ["","","","","","","success",1]
 
 get_order_state:
 #orderNo

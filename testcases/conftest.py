@@ -37,5 +37,5 @@ gen=Genapi(HOST)
 
 
 # #生成excel数据并写入
-data = data_test.addpeople_data(20)
-excel.write_excel_xls(excel_path, sheet_name, data)
+# data = data_test.update_people_data(15)
+# excel.write_excel_xls(excel_path, sheet_name, data)

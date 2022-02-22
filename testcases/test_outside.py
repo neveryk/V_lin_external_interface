@@ -87,11 +87,13 @@ class TestOutside():
     # @allure.story('银行卡修改')
     # @allure.title('执行银行卡修改用例')
     # @allure.step('银行卡修改')
-    # @pytest.mark.parametrize("peopleName,iDCard,paymentAccountType,bankCode,bankName",outside_data["update_bank_code"])
-    # def test_up_bank_code(self,peopleName,iDCard,paymentAccountType,bankCode,bankName):
-    #     res = gen.update_bank_code(apikey,peopleName,iDCard,paymentAccountType,bankCode,bankName)
+    # @pytest.mark.parametrize("peopleName,iDCard,paymentAccountType,bankCode,bankName,phone,message,returnStatus",outside_data["update_bank_code"])
+    # def test_up_bank_code(self,peopleName,iDCard,paymentAccountType,bankCode,bankName,phone,message,returnStatus):
+    #     res = gen.update_bank_code(apikey,peopleName,iDCard,paymentAccountType,bankCode,bankName,phone)
     #     json_data = res.json()
-    #     assert json_data["message"] == "success"
+    #     assert res.status_code == 200
+    #     assert json_data["message"] == message
+    #     assert json_data["returnStatus"] == returnStatus
     #     return res
 
     # @allure.story('获取账单状态')

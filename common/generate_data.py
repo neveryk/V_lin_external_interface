@@ -32,5 +32,20 @@ class Generate_Data():
         first_day_of_last_month=datetime.date(last_day_of_last_month.year,last_day_of_last_month.month,1)
         return {"last_day_of_last_month":str(last_day_of_last_month),"first_day_of_last_month":str(first_day_of_last_month),"now":str(now)}
 
-
+    def update_people_data(self,num):
+        clos=["peopleName","iDCard","paymentAccountType","bankCode","bankName","phone","message","returnStatus"]
+        datalist=[]
+        for i in range(num):
+            people_name = f.name()
+            iDCard=f.ssn()
+            paymentAccountType=1
+            bankCode=str(random.randint(6200000000000000, 6299999999999999))
+            bankname="建行"
+            phone=f.phone_number()
+            message="success"
+            returnStatus=1
+            data=[people_name,iDCard,paymentAccountType,bankCode,bankname,phone,message,returnStatus]
+            datalist.append(data)
+        datalist.insert(0, clos)
+        return datalist
 data_test=Generate_Data()

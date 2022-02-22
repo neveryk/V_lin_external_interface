@@ -17,28 +17,40 @@ class Test_Excel_Outside():
         assert json_data["message"]==message
         assert json_data["returnStatus"]==returnStatus
         return res
+    # #
+    # @allure.story('获取上传文件接口')
+    # @allure.title('上传文件接口')
+    # @allure.step('上传附件')
+    # def test_upload(self):
+    #     res=gen.upload_file(apikey)
+    #     json_data = res.json()
+    #     global file_path
+    #     file_path=json_data["data"][0]["path"]
+    #     assert res.status_code == 200
+    #     assert json_data["message"] == "success"
+    #     assert json_data["returnStatus"] == 1
+    #     return res
     #
-    @allure.story('获取上传文件接口')
-    @allure.title('上传文件接口')
-    @allure.step('上传附件')
-    def test_upload(self):
-        res=gen.upload_file(apikey)
-        json_data = res.json()
-        global file_path
-        file_path=json_data["data"][0]["path"]
-        assert res.status_code == 200
-        assert json_data["message"] == "success"
-        assert json_data["returnStatus"] == 1
-        return res
+    # @allure.story('人员同步')
+    # @allure.title('执行人员同步用例')
+    # @allure.step('人员同步')
+    # @pytest.mark.parametrize("customerCode,peopleName,iDCard,phone,paymentAccountType,bankCode,bankName,createDate,signDate,protocolState,message,returnStatus",excel_data)
+    # def test_add_people(self,customerCode,peopleName,iDCard,phone,paymentAccountType,bankCode,bankName,createDate,signDate,protocolState,message,returnStatus):
+    #     res = gen.add_people(apikey,customerCode,peopleName,iDCard,phone,paymentAccountType,bankCode,bankName,createDate,signDate,file_path,protocolState)
+    #     json_data = res.json()
+    #     assert res.status_code == 200
+    #     assert json_data["message"] == "success"
+    #     assert json_data["returnStatus"] == 1
+    #     return res
 
-    @allure.story('人员同步')
-    @allure.title('执行人员同步用例')
-    @allure.step('人员同步')
-    @pytest.mark.parametrize("customerCode,peopleName,iDCard,phone,paymentAccountType,bankCode,bankName,createDate,signDate,protocolState,message,returnStatus",excel_data)
-    def test_add_people(self,customerCode,peopleName,iDCard,phone,paymentAccountType,bankCode,bankName,createDate,signDate,protocolState,message,returnStatus):
-        res = gen.add_people(apikey,customerCode,peopleName,iDCard,phone,paymentAccountType,bankCode,bankName,createDate,signDate,file_path,protocolState)
+    @allure.story('银行卡修改')
+    @allure.title('执行银行卡修改用例')
+    @allure.step('银行卡修改')
+    @pytest.mark.parametrize("peopleName,iDCard,paymentAccountType,bankCode,bankName,phone,message,returnStatus",excel_data)
+    def test_up_bank_code(self,peopleName,iDCard,paymentAccountType,bankCode,bankName,phone,message,returnStatus):
+        res = gen.update_bank_code(apikey,peopleName,iDCard,paymentAccountType,bankCode,bankName,phone)
         json_data = res.json()
         assert res.status_code == 200
-        assert json_data["message"] == "success"
-        assert json_data["returnStatus"] == 1
+        assert json_data["message"] == message
+        assert json_data["returnStatus"] == returnStatus
         return res
