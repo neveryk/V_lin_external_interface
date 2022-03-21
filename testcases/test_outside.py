@@ -1,27 +1,31 @@
-from testcases.conftest import gen,outside_data,excel_path,sheet_name
+from testcases.conftest import gen, outside_data
 import pytest
 import allure
 from common.operation_excel import excel
+from common.connect_database import s
 
+class TestOutside:
+    #apikey: str = None
 
 
 class TestOutside():
     pass
-    # V零工对外接口
-    # 每次必须调用apikey访问
-    # @allure.story('获取凭证接口')
-    # @allure.title('执行获取凭证接口用例')
-    # @allure.step('获取凭证')
-    # @pytest.mark.parametrize('userkey,secret,apitype,message,returnStatus',outside_data['test_getkey'])
-    # def test_getkey(self,userkey,secret,apitype,message,returnStatus):
-    #     res=gen.get_key(userkey,secret,apitype)
-    #     json_data=res.json()
-    #     global apikey
-    #     apikey=json_data["data"]["apikey"]
-    #     assert res.status_code==200
-    #     assert json_data["message"]==message
-    #     assert json_data["returnStatus"]==returnStatus
-    #     return res
+    V零工对外接口
+    每次必须调用apikey访问
+    @allure.story('获取凭证接口')
+    @allure.title('执行获取凭证接口用例')
+    @allure.step('获取凭证')
+    @pytest.mark.parametrize('userkey,secret,apitype,message,returnStatus',outside_data['test_getkey'])
+    @pytest.mark.run(order=3)
+    def test_getkey(self,userkey,secret,apitype,message,returnStatus):
+        res=gen.get_key(userkey,secret,apitype)
+        json_data=res.json()
+        global apikey
+        apikey=json_data["data"]["apikey"]
+        assert res.status_code==200
+        assert json_data["message"]==message
+        assert json_data["returnStatus"]==returnStatus
+        return res
     # #
     # @allure.story('获取上传文件接口')
     # @allure.title('上传文件接口')
@@ -112,11 +116,39 @@ class TestOutside():
     #     res = gen.get_people_state(apikey, generateCode)
     #     return res
 
-    # @allure.story('获取企业可用余额')
-    # @allure.title('执行获取企业可用余额用例')
-    # @allure.step('获取企业可用余额')
-    # @pytest.mark.parametrize("customerCode",outside_data["get_Client_freeamount"])
-    # def test_get_Client_freeamount(self,customerCode):
-    #     res = gen.get_Client_freeamount(apikey,customerCode)
+    @allure.step('获取企业可用余额')
+    @pytest.mark.parametrize("customerCode,returnStatus", outside_data["get_Client_freeamount"])
+    @pytest.mark.run(order=3)
+    def test_get_Client_freeamount(self, customerCode,returnStatus):
+        res = gen.get_Client_freeamount(apikey, customerCode)
+        json_data = res.json()
+        dfreeamount=s.getCfreeamount(customerCode)
+        assert json_data["data"]["accountBalance"]==dfreeamount[0][0]
+        assert json_data["message"]=="success"
+        assert json_data["returnStatus"]==returnStatus
+        return res
+
+    # @allure.step('人员发单状态查询')
+    # @pytest.mark.parametrize("iDCard,peopleName,phone,bankCode,message,status",outside_data["get_people_orderstatus"])
+    # @pytest.mark.run(order=2)
+    # def test_get_people_orderstatus(self,iDCard,peopleName,phone,bankCode,message,status):
+    #     res = gen.get_people_orderstatus(apikey, iDCard)
+    #     json_data=res.json()
+    #     print(json_data)
+    #     # assert json_data["data"]["peopleInfo"]["peopleName"]==peopleName
+    #     # assert json_data["data"]["peopleInfo"]["phone"]==phone
+    #     # assert json_data["data"]["peopleInfo"]["bankCode"]==bankCode
+    #     assert json_data["message"]==message
+    #     assert json_data["data"]["status"]==status
     #     return res
 
+    # @allure.step('对账接口')
+    # @pytest.mark.parametrize("customerCode,startDate,endDate,message,returnStatus", outside_data["get_Statement"])
+    # @pytest.mark.run(order=4)
+    # def test_get_Statement(self, customerCode, startDate, endDate,message,returnStatus):
+    #     res = gen.get_Statement(apikey, customerCode, startDate, endDate)
+    #     json_data = res.json()
+    #     print(json_data)
+    #     assert json_data["message"]==message
+    #     assert json_data["returnStatus"]==returnStatus
+    #     return res

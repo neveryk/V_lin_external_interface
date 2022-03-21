@@ -106,3 +106,20 @@ class Genapi(Client):
             "customercode":customerCode
         }
         return self.post("/api/External/GetClient",data)
+
+    def get_people_orderstatus(self,apikey,iDCard):
+        data={
+            "apikey":apikey,
+            "iDCard":iDCard
+        }
+        return self.post("/api/External/GetPeopleStatus",data)
+
+
+    def get_Statement(self,apikey,customerCode,startDate,endDate):
+        data={
+            "apikey": apikey,
+            "customerCode": customerCode,
+            "startDate": startDate,
+            "endDate": endDate
+        }
+        return self.post("/api/External/GetStatement",data)

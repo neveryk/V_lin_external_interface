@@ -1,6 +1,6 @@
 #userkey,secret,apitype,message,returnStatus
 test_getkey:
-  - ["kkpt","kkpt","0","success",1]
+  - ["cs001","123456","0","success",0]
 
 test_add_order_v1:
 #orderNo,orderName,customerCode,address,svctmBegin,svctmEnd,unitPrice,quantity,peopleName,iDCard,bankCode,amt,exAmt
@@ -170,4 +170,20 @@ get_people_state:
 
 get_Client_freeamount:
 #customerCode
-  - "QA3213165461321132"
+  - ["91310105MA1FW7YJ01",1]
+
+
+
+get_people_orderstatus:
+#信息正确
+  - ["610103197505101633","郭大","13776231554","62254789874451887","success",1]
+#身份证号不存在
+  - ["610103197505101634","","","","success",0]
+#系统内身份证未关联当前公司
+  - ["522422199102270824","","","","success",0]
+
+get_Statement:
+  - ["91310105MA1FW7YJ01","2022-03-21","2022-03-24","success",1]
+  - ["91310105MA1FW7YJ01","2021-12-22","2022-03-24","时间范围不能超过90天",0]
+
+
